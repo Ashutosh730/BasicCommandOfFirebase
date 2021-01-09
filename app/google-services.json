@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "189678198899",
+    "project_id": "basicofcloudfirebase",
+    "storage_bucket": "basicofcloudfirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:189678198899:android:66a6fe8e63e4bb5e144a06",
+        "android_client_info": {
+          "package_name": "com.example.basicofcloudfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "189678198899-i4e33fda53ckbhjkdjnfmdjum2m5o0s6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD66hPYnaRDB6vDy79FC87PYXCTPFe5uFo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "189678198899-i4e33fda53ckbhjkdjnfmdjum2m5o0s6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
