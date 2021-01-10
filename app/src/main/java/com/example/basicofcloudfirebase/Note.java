@@ -2,22 +2,26 @@ package com.example.basicofcloudfirebase;
 
 import com.google.firebase.firestore.Exclude;
 
+import java.util.Map;
+
 public class Note {
 
     private String title;
     private String description;
     private String docId;
     private int priority;
+    private Map<String, Boolean> tags;
 
 
     public Note() {
         // Default Constructor with no argument...
     }
 
-    public Note(String title, String description,int priority) {
+    public Note(String title, String description,int priority, Map<String, Boolean> tags) {
         this.title = title;
         this.description = description;
         this.priority = priority;
+        this.tags = tags;
     }
 
     @Exclude
@@ -43,5 +47,9 @@ public class Note {
 
     public void setPriority(int priority) {
         this.priority = priority;
+    }
+
+    public Map<String, Boolean> getTags() {
+        return tags;
     }
 }
