@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
         loadingText = findViewById(R.id.loadingText);
         editTextPriority = findViewById(R.id.edit_text_priority);
         editTextTags  = findViewById(R.id.edit_text_tags);
-        updateArray();
     }
 
     public void addNotes(View v) {
@@ -67,7 +66,8 @@ public class MainActivity extends AppCompatActivity {
 
         Note note = new Note(title, description, priority, allTagsList);
 
-        notebookRef.add(note)
+        notebookRef.document(
+                "1234F01K02u1aCJL5cJ").collection("Child Notes").add(note)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
@@ -83,7 +83,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void loadNotes(View v) {
-        notebookRef.whereArrayContains("tags", "ha1").get()
+        notebookRef.document(
+                "1234F01K02u1aCJL5cJ")
+                .collection("Child Notes").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
@@ -102,10 +104,4 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
-    private void updateArray(){
-        notebookRef.document("BEfmRF01K02u1aCJL5cJ")
-//                .update("tags", FieldValue.arrayUnion("hi1"));
-        .update("tags.ha1.nested1.nested2.nested3",false);
-    }
-
 }
